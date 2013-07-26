@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<LinearLayout
+        android:id="@+id/item_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="7dip"
+        android:layout_marginTop="10dip" >
+
+        <ImageView
+            android:id="@+id/featured_item_img"
+            android:layout_width="70dip"
+            android:layout_height="70dip"
+            android:background="@drawable/ic_launcher" />
+
+        <RelativeLayout
+            android:id="@+id/featured_item_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="30dip" >
+
+            <TextView
+                android:id="@+id/item_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:textColor="#034D38"
+                android:text="Sample text Sample text Sample text Sample text" />
+            <TextView
+                android:id="@+id/item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="on Monday"
+                android:textColor="#827E7E"
+                android:layout_marginTop="10dip"
+                android:layout_below="@id/item_desc" />
+		
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

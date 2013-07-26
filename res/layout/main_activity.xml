@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/MainHeaderLay"
+        android:layout_width="match_parent"
+        android:layout_height="40dip">
+
+        <TextView
+            android:id="@+id/headerTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Header"
+            android:textAllCaps="true"
+            android:textColor="#f2ebb4" />
+        <Button 
+            android:id="@+id/tracking"
+            android:layout_width="wrap_content"
+            android:layout_height="20dip"
+            android:text="Tracking"
+            android:textSize="10dp"
+            android:layout_margin="5dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/allsitelistdesign_all_corner"
+            android:visibility="gone"/>
+    </RelativeLayout>
+	<LinearLayout
+            android:id="@+id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/MainHeaderLay"
+            android:orientation="vertical"
+            android:layout_above="@+id/linearLayoutFooter" >
+      </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayoutFooter"
+        android:layout_width="match_parent"
+        android:layout_height="55dip"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@drawable/tab_bar">
+		
+        <Button
+            android:id="@+id/featuredTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Featured"
+            android:textColor="#fff"
+            android:textSize="10dip"
+            android:layout_marginTop="8dip"
+            android:drawableTop="@drawable/featured"
+            android:background="@android:color/transparent" />
+      
+        <Button
+            android:id="@+id/streamTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Stream"
+            android:textColor="#fff"
+            android:textSize="10dip"
+            android:layout_marginTop="8dip"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/stream" />
+
+        <Button
+            android:id="@+id/searchTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Search"
+            android:textColor="#fff"
+            android:textSize="10dip"
+            android:layout_marginTop="8dip"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/search" />
+
+        <Button
+            android:id="@+id/poundTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pounds"
+            android:textColor="#fff"
+            android:textSize="10dip"
+            android:layout_marginTop="8dip"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/pound_fist" />
+        <Button
+            android:id="@+id/accountTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Me"
+            android:textColor="#fff"
+            android:textSize="10dip"
+            android:layout_marginTop="8dip"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/profile" />
+    </LinearLayout>
+
+</RelativeLayout>

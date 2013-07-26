@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout
+        android:id="@+id/item_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="7dip"
+        android:layout_marginTop="10dip" >
+
+        <ImageView
+            android:id="@+id/tracking_item_img"
+            android:layout_width="70dip"
+            android:layout_height="70dip"
+            android:background="@drawable/ic_launcher" />
+
+        <RelativeLayout
+            android:id="@+id/featured_item_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dip"
+            android:layout_marginRight="30dip" >
+
+            <TextView
+                android:id="@+id/item_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:text="SIDNEY CROSBY"
+                android:textColor="#034D38" />
+            <TextView
+                android:id="@+id/team_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PITTSBURGH PENGUINS"
+                android:textColor="#800606"
+                android:textSize="11dip"
+                android:layout_marginTop="4dip"
+                android:layout_below="@id/item_desc" />
+		<TextView
+                android:id="@+id/item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JUN 08 @ BOS 4SOG,23:05 mins"
+                android:textColor="#034D38"
+                android:textSize="11dip"
+                android:layout_marginTop="10dip"
+                android:layout_below="@id/team_name" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/tableFieldLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accessBtn"
+        android:layout_marginTop="20dip" >
+
+        <LinearLayout
+            android:id="@+id/nameLay"
+            android:layout_width="300dip"
+            android:layout_height="40dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dip"
+            android:background="@drawable/allsitelistdesign_top_corner"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text=" First Name"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/editFstName"
+                android:layout_width="157dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:inputType="number"
+                android:paddingLeft="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/addrFstLay"
+            android:layout_width="300dip"
+            android:layout_height="40dip"
+            android:layout_below="@+id/nameLay"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/allsitelistdesign"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/addrFstText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Last Name"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/editLastNmae"
+                android:layout_width="157dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingLeft="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/addrSndLay"
+            android:layout_width="300dip"
+            android:layout_height="40dip"
+            android:layout_below="@+id/addrFstLay"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/allsitelistdesign"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/addrSndText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Gender"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/editGender"
+                android:layout_width="157dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingLeft="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/addrLastLay"
+            android:layout_width="300dip"
+            android:layout_height="40dip"
+            android:layout_below="@+id/addrSndLay"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/allsitelistdesign"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/addrLastText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Birthday"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/editBirthday"
+                android:layout_width="157dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingLeft="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/portLay"
+            android:layout_width="300dip"
+            android:layout_height="40dip"
+            android:layout_below="@+id/addrLastLay"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/allsitelistdesign"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/portText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Email"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="150dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingLeft="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/breadCrumbFreq"
+            android:layout_width="300dip"
+            android:layout_height="40dip"
+            android:layout_below="@+id/portLay"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/allsitelistdesign_bottom_corner"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/brdCumbText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Twitter"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/editTwitter"
+                android:layout_width="190dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingLeft="2dip" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="250dip"
+            android:layout_height="40dip"
+            android:layout_marginTop="20dip"
+            android:layout_below="@id/breadCrumbFreq"
+            android:layout_centerHorizontal="true"
+            android:text="Save"
+            android:background="@drawable/allsitelistdesign_all_corner" />
+    </RelativeLayout>
+
+</LinearLayout>
