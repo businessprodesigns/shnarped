@@ -20,8 +20,7 @@ public class ViewStream implements OnClickListener {
 	}
 	private void init(View _view2) {
 		mActivity.headertitleTxt.setText("STREAM");
-		mActivity.tracking.setVisibility(View.VISIBLE);
-		mActivity.tracking.setOnClickListener(this);
+		
 	}
 	public View getView() {
 		return _view;

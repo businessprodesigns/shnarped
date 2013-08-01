@@ -9,6 +9,105 @@ package com.shnarped.activites;
 
 public final class R {
     public static final class attr {
+        /**  Drawable used as indicator for the active view. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int mdActiveIndicator=0x7f010004;
+        /**  Whether the indicator should be animated between active views. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdAllowIndicatorAnimation=0x7f01000a;
+        /**  Drawable to use for the background of the content. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int mdContentBackground=0x7f010001;
+        /**  Drawable used for the drop shadow. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int mdDropShadow=0x7f010008;
+        /**  The color of the drop shadow. Default is #FF000000. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdDropShadowColor=0x7f010007;
+        /**  Defines whether the content will have a dropshadow onto the menu. Default is true. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdDropShadowEnabled=0x7f010005;
+        /**  The size of the drop shadow. Default is 6dp 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdDropShadowSize=0x7f010006;
+        /**  The maximum animation duration 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdMaxAnimationDuration=0x7f01000b;
+        /**  Drawable to use for the background of the menu. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int mdMenuBackground=0x7f010002;
+        /**  The size of the menu. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdMenuSize=0x7f010003;
+        /**  The touch bezel size. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdTouchBezelSize=0x7f010009;
+        /**  Reference to a style for the menu drawer. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int menuDrawerStyle=0x7f010000;
+    }
+    public static final class color {
+        public static final int md__defaultBackground=0x7f040001;
+        public static final int md__transparent=0x7f040000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -17,8 +116,8 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int allsitelistdesign=0x7f020000;
@@ -29,180 +128,274 @@ public final class R {
         public static final int arrow_right=0x7f020005;
         public static final int arrow_right_=0x7f020006;
         public static final int bottom=0x7f020007;
-        public static final int button_dark=0x7f020008;
-        public static final int button_disable=0x7f020009;
-        public static final int edittextinnershadow=0x7f02000a;
-        public static final int edittextinnershadow_search=0x7f02000b;
-        public static final int featured=0x7f02000c;
-        public static final int highpoundcount=0x7f02000d;
-        public static final int hockeystick_icon=0x7f02000e;
-        public static final int hotstreak=0x7f02000f;
-        public static final int ic_launcher=0x7f020010;
-        public static final int inner_bg=0x7f020011;
-        public static final int joinus=0x7f020012;
-        public static final int middle=0x7f020013;
-        public static final int plus_icon=0x7f020014;
-        public static final int pound_fist=0x7f020015;
-        public static final int pound_flat=0x7f020016;
-        public static final int pounds_pic=0x7f020017;
-        public static final int profile=0x7f020018;
-        public static final int profile_pic=0x7f020019;
-        public static final int search=0x7f02001a;
-        public static final int search_jersey=0x7f02001b;
-        public static final int searchbutton=0x7f02001c;
-        public static final int selection_tab=0x7f02001d;
-        public static final int separator_line=0x7f02001e;
-        public static final int signin_button=0x7f02001f;
-        public static final int stream=0x7f020020;
-        public static final int tab_bar=0x7f020021;
-        public static final int top=0x7f020022;
-        public static final int track=0x7f020023;
-        public static final int untrack=0x7f020024;
-        public static final int verified_icon=0x7f020025;
-        public static final int verified_icon_large=0x7f020026;
-        public static final int verified_icon_small=0x7f020027;
+        public static final int bottom_bar=0x7f020008;
+        public static final int button_dark=0x7f020009;
+        public static final int button_disable=0x7f02000a;
+        public static final int camerabutton=0x7f02000b;
+        public static final int divider=0x7f02000c;
+        public static final int edittextinnershadow=0x7f02000d;
+        public static final int edittextinnershadow_search=0x7f02000e;
+        public static final int featured=0x7f02000f;
+        public static final int greenpucklines=0x7f020010;
+        public static final int header_btn=0x7f020011;
+        public static final int highpoundcount=0x7f020012;
+        public static final int hockeystick_icon=0x7f020013;
+        public static final int hotstreak=0x7f020014;
+        public static final int ic_dialog_info=0x7f020015;
+        public static final int ic_launcher=0x7f020016;
+        public static final int ic_launcher1=0x7f020017;
+        public static final int ic_menu_delete=0x7f020018;
+        public static final int inbox_fists_bg=0x7f020019;
+        public static final int inner_bg=0x7f02001a;
+        public static final int joinus=0x7f02001b;
+        public static final int md__category_background=0x7f02001c;
+        public static final int md__list_focused_holo=0x7f02001d;
+        public static final int md__list_longpressed_holo=0x7f02001e;
+        public static final int md__list_pressed_holo_dark=0x7f02001f;
+        public static final int md__list_selector_background_transition_holo_dark=0x7f020020;
+        public static final int md__list_selector_disabled_holo_dark=0x7f020021;
+        public static final int md__list_selector_holo_dark=0x7f020022;
+        public static final int menu_arrow=0x7f020023;
+        public static final int menu_arrow_bottom=0x7f020024;
+        public static final int menu_arrow_right=0x7f020025;
+        public static final int menu_arrow_top=0x7f020026;
+        public static final int middle=0x7f020027;
+        public static final int open_list=0x7f020028;
+        public static final int plus_icon=0x7f020029;
+        public static final int pound=0x7f02002a;
+        public static final int pound_delete_pic=0x7f02002b;
+        public static final int pound_fist=0x7f02002c;
+        public static final int pound_flat=0x7f02002d;
+        public static final int pound_sm=0x7f02002e;
+        public static final int pounds_pic=0x7f02002f;
+        public static final int profile=0x7f020030;
+        public static final int profile_pic=0x7f020031;
+        public static final int receive_normal=0x7f020032;
+        public static final int receive_selected=0x7f020033;
+        public static final int search=0x7f020034;
+        public static final int search_bar=0x7f020035;
+        public static final int search_jersey=0x7f020036;
+        public static final int searchbutton=0x7f020037;
+        public static final int selection_tab=0x7f020038;
+        public static final int send_normal=0x7f020039;
+        public static final int send_selected=0x7f02003a;
+        public static final int separator_line=0x7f02003b;
+        public static final int signin_button=0x7f02003c;
+        public static final int stream=0x7f02003d;
+        public static final int tab_bar=0x7f02003e;
+        public static final int top=0x7f02003f;
+        public static final int track=0x7f020040;
+        public static final int twitter_bird=0x7f020041;
+        public static final int twitter_bird_off=0x7f020042;
+        public static final int untrack=0x7f020043;
+        public static final int verified_icon=0x7f020044;
+        public static final int verified_icon_large=0x7f020045;
+        public static final int verified_icon_small=0x7f020046;
     }
     public static final class id {
-        public static final int MainHeaderLay=0x7f08001d;
-        public static final int about=0x7f08006b;
-        public static final int accessBtn=0x7f08002c;
-        public static final int accountTab=0x7f080026;
-        public static final int action_settings=0x7f08006f;
-        public static final int addrFstLay=0x7f080038;
-        public static final int addrFstText=0x7f080039;
-        public static final int addrLastLay=0x7f080030;
-        public static final int addrLastText=0x7f080031;
-        public static final int addrSndLay=0x7f08003b;
-        public static final int addrSndText=0x7f08003c;
-        public static final int back=0x7f080014;
-        public static final int back_btn=0x7f08000d;
-        public static final int bottom_Lay=0x7f080059;
-        public static final int bottom_header=0x7f08005f;
-        public static final int brdCumbText=0x7f080041;
-        public static final int breadCrumbFreq=0x7f080040;
-        public static final int buttonLay=0x7f080005;
-        public static final int cancel=0x7f080049;
-        public static final int change_pass=0x7f08006a;
-        public static final int conf_pass=0x7f080035;
-        public static final int conf_password=0x7f080012;
-        public static final int editBirthday=0x7f08003e;
-        public static final int editEmail=0x7f08003f;
-        public static final int editFstName=0x7f080037;
-        public static final int editGender=0x7f08003d;
-        public static final int editLastNmae=0x7f08003a;
-        public static final int editTwitter=0x7f080042;
-        public static final int edit_prof=0x7f080069;
-        public static final int email_address=0x7f08000a;
-        public static final int email_addrss=0x7f080010;
-        public static final int fav=0x7f080056;
-        public static final int featuredTab=0x7f080022;
-        public static final int featured_item_desc=0x7f080019;
-        public static final int featured_item_img=0x7f080018;
-        public static final int featuresList=0x7f08005e;
-        public static final int forgot_emailAddress=0x7f080015;
-        public static final int forgot_pass=0x7f080001;
-        public static final int fst_name=0x7f08000e;
-        public static final int fullLay=0x7f080002;
-        public static final int headerTxt=0x7f08001e;
-        public static final int invite_frnd=0x7f08005a;
-        public static final int item_date=0x7f08001b;
-        public static final int item_desc=0x7f08001a;
-        public static final int item_lay=0x7f080017;
-        public static final int joinus=0x7f080029;
-        public static final int last_name=0x7f08000f;
-        public static final int linearLayoutFooter=0x7f080021;
-        public static final int loginLay=0x7f080009;
-        public static final int login_btn=0x7f080007;
-        public static final int login_lay=0x7f08001c;
-        public static final int mainLay=0x7f080000;
-        public static final int most_points=0x7f080067;
-        public static final int most_pounds=0x7f080068;
-        public static final int msg=0x7f080028;
-        public static final int name=0x7f080003;
-        public static final int nameLay=0x7f08002d;
-        public static final int nameText=0x7f08002e;
-        public static final int new_pass=0x7f080032;
-        public static final int no_pounds=0x7f08004e;
-        public static final int notnow_btn=0x7f080008;
-        public static final int pass=0x7f08002f;
-        public static final int password=0x7f08000b;
-        public static final int player_with_stalls=0x7f080065;
-        public static final int portLay=0x7f080033;
-        public static final int portText=0x7f080034;
-        public static final int pound=0x7f08004d;
-        public static final int poundTab=0x7f080025;
-        public static final int poundTxt=0x7f080060;
-        public static final int prof_desc=0x7f080058;
-        public static final int prof_fav=0x7f080057;
-        public static final int prof_img=0x7f080053;
-        public static final int prof_name=0x7f080055;
-        public static final int prof_name_lay=0x7f080054;
-        public static final int prof_pic=0x7f080027;
-        public static final int push_btn=0x7f080051;
-        public static final int relativeLay=0x7f080063;
-        public static final int resetPass_btn=0x7f080016;
-        public static final int save=0x7f080036;
-        public static final int search=0x7f080062;
-        public static final int searchBar=0x7f080061;
-        public static final int searchTab=0x7f080024;
-        public static final int selectTeam=0x7f080043;
-        public static final int set_fav_team=0x7f08005c;
-        public static final int settings=0x7f08005d;
-        public static final int sign_lay=0x7f08004a;
-        public static final int signout=0x7f08006c;
-        public static final int signupLogin_btn=0x7f08002a;
-        public static final int signup_btn=0x7f080006;
-        public static final int signup_password=0x7f080011;
-        public static final int streamList=0x7f08006d;
-        public static final int streamTab=0x7f080023;
-        public static final int t1=0x7f080044;
-        public static final int t2=0x7f080045;
-        public static final int t3=0x7f080046;
-        public static final int t4=0x7f080047;
-        public static final int t5=0x7f080048;
-        public static final int tabcontent=0x7f080020;
-        public static final int tableFieldLay=0x7f08002b;
-        public static final int tag=0x7f080004;
-        public static final int team=0x7f080064;
-        public static final int team_name=0x7f08004c;
-        public static final int tracking=0x7f08001f;
-        public static final int trackingList=0x7f08006e;
-        public static final int tracking_btn=0x7f08004f;
-        public static final int tracking_item_img=0x7f08004b;
-        public static final int untracking=0x7f080050;
-        public static final int upper_lay=0x7f080052;
-        public static final int verified=0x7f080066;
-        public static final int viewForgotPassword=0x7f080013;
-        public static final int viewLay=0x7f08000c;
-        public static final int view_tracking_list=0x7f08005b;
+        public static final int MainHeaderLay=0x7f060028;
+        public static final int about=0x7f060095;
+        public static final int accessBtn=0x7f06003e;
+        public static final int accountTab=0x7f060033;
+        public static final int action_settings=0x7f060099;
+        public static final int addrFstLay=0x7f06005b;
+        public static final int addrFstText=0x7f06005c;
+        public static final int addrLastLay=0x7f060042;
+        public static final int addrLastText=0x7f060043;
+        public static final int addrSndLay=0x7f06005e;
+        public static final int addrSndText=0x7f06005f;
+        public static final int address=0x7f060051;
+        public static final int back=0x7f06001a;
+        public static final int back_btn=0x7f060013;
+        public static final int bottom_Lay=0x7f060080;
+        public static final int bottom_header=0x7f060086;
+        public static final int bottom_lay=0x7f060072;
+        public static final int brdCumbText=0x7f060064;
+        public static final int breadCrumbFreq=0x7f060063;
+        public static final int buttonLay=0x7f06000b;
+        public static final int button_lay=0x7f060055;
+        public static final int camara=0x7f060073;
+        public static final int cancel=0x7f060026;
+        public static final int change_pass=0x7f060094;
+        public static final int conf_pass=0x7f060047;
+        public static final int conf_password=0x7f060018;
+        public static final int date=0x7f060067;
+        public static final int deleteLay=0x7f06006a;
+        public static final int deletePound=0x7f06006b;
+        public static final int desc=0x7f060068;
+        public static final int devider=0x7f060054;
+        public static final int dob=0x7f060050;
+        public static final int edit=0x7f060029;
+        public static final int editBirthday=0x7f060061;
+        public static final int editEmail=0x7f060062;
+        public static final int editFstName=0x7f06005a;
+        public static final int editGender=0x7f060060;
+        public static final int editLastNmae=0x7f06005d;
+        public static final int editTwitter=0x7f060065;
+        public static final int edit_prof=0x7f060093;
+        public static final int email_address=0x7f060010;
+        public static final int email_addrss=0x7f060016;
+        public static final int fav=0x7f06007f;
+        public static final int featuredTab=0x7f06002f;
+        public static final int featured_item_desc=0x7f06001f;
+        public static final int featured_item_img=0x7f06001e;
+        public static final int featuresList=0x7f060085;
+        public static final int forgot_emailAddress=0x7f06001b;
+        public static final int forgot_pass=0x7f060007;
+        public static final int fromGalary=0x7f060076;
+        public static final int fst_name=0x7f060014;
+        public static final int fullLay=0x7f060008;
+        public static final int headerTxt=0x7f06002b;
+        public static final int inviteFrnds=0x7f060023;
+        public static final int invite_frnd=0x7f060081;
+        public static final int item_date=0x7f060021;
+        public static final int item_desc=0x7f060020;
+        public static final int item_lay=0x7f06001d;
+        public static final int joinus=0x7f06003b;
+        public static final int last_name=0x7f060015;
+        public static final int linearLayoutFooter=0x7f06002e;
+        public static final int loginLay=0x7f06000f;
+        public static final int login_btn=0x7f06000d;
+        public static final int login_lay=0x7f060027;
+        public static final int mainLay=0x7f060006;
+        /**  Used with View#setTag(int) to specify a position for the active view. 
+         */
+        public static final int mdActiveViewPosition=0x7f060005;
+        /**  ID used when defining the content layout in XML. 
+         */
+        public static final int mdContent=0x7f060000;
+        /**  ID used when defining the menu layout in XML. 
+         */
+        public static final int mdMenu=0x7f060001;
+        /**  The ID of the content container. 
+         */
+        public static final int md__content=0x7f060002;
+        /**  The ID of the drawer. 
+         */
+        public static final int md__drawer=0x7f060004;
+        /**  The ID of the menu container. 
+         */
+        public static final int md__menu=0x7f060003;
+        public static final int menu_item_img=0x7f060037;
+        public static final int menu_item_name=0x7f060038;
+        public static final int menu_list=0x7f060036;
+        public static final int most_points=0x7f060091;
+        public static final int most_pounds=0x7f060092;
+        public static final int msg=0x7f06003a;
+        public static final int name=0x7f060009;
+        public static final int nameLay=0x7f06003f;
+        public static final int nameText=0x7f060040;
+        public static final int names=0x7f060077;
+        public static final int new_pass=0x7f060044;
+        public static final int no_pounds=0x7f060053;
+        public static final int notnow_btn=0x7f06000e;
+        public static final int openlist=0x7f06002a;
+        public static final int pass=0x7f060041;
+        public static final int password=0x7f060011;
+        public static final int player_with_stalls=0x7f06008f;
+        public static final int portLay=0x7f060045;
+        public static final int portText=0x7f060046;
+        public static final int position=0x7f06004d;
+        public static final int pound=0x7f060052;
+        public static final int poundLay=0x7f06006d;
+        public static final int poundTab=0x7f060032;
+        public static final int poundTxt=0x7f060087;
+        public static final int prof_desc=0x7f06004f;
+        public static final int prof_fav=0x7f06004e;
+        public static final int prof_img=0x7f06004a;
+        public static final int prof_name=0x7f06007e;
+        public static final int prof_name_lay=0x7f06004b;
+        public static final int prof_pic=0x7f060039;
+        public static final int push_btn=0x7f06007d;
+        public static final int receive_btn=0x7f060088;
+        public static final int received_list=0x7f06008a;
+        public static final int receiver_name=0x7f060066;
+        public static final int relativeLay=0x7f06008d;
+        public static final int reportLay=0x7f06006c;
+        public static final int resetPass_btn=0x7f06001c;
+        public static final int save=0x7f060048;
+        public static final int search=0x7f060035;
+        public static final int searchBar=0x7f06008c;
+        public static final int searchLay=0x7f060034;
+        public static final int searchTab=0x7f060031;
+        public static final int selectTeam=0x7f06006e;
+        public static final int send_btn=0x7f060089;
+        public static final int send_list=0x7f06008b;
+        public static final int sender_name=0x7f060078;
+        public static final int set_fav_team=0x7f060083;
+        public static final int settings=0x7f060084;
+        public static final int sign_lay=0x7f060079;
+        public static final int signout=0x7f060096;
+        public static final int signupLogin_btn=0x7f06003c;
+        public static final int signup_btn=0x7f06000c;
+        public static final int signup_password=0x7f060017;
+        public static final int stall=0x7f060059;
+        public static final int stat=0x7f060057;
+        public static final int streamList=0x7f060097;
+        public static final int streamTab=0x7f060030;
+        public static final int t1=0x7f060024;
+        public static final int t2=0x7f060025;
+        public static final int t3=0x7f06006f;
+        public static final int t4=0x7f060070;
+        public static final int t5=0x7f060071;
+        public static final int tabcontent=0x7f06002d;
+        public static final int tableFieldLay=0x7f06003d;
+        public static final int tag=0x7f06000a;
+        public static final int takePic=0x7f060075;
+        public static final int team=0x7f06008e;
+        public static final int team_name=0x7f06004c;
+        public static final int track=0x7f060056;
+        public static final int tracking=0x7f06002c;
+        public static final int trackingList=0x7f060098;
+        public static final int tracking_btn=0x7f06007b;
+        public static final int tracking_item_img=0x7f06007a;
+        public static final int tracklistFooterLay=0x7f060022;
+        public static final int twitter=0x7f060058;
+        public static final int untracking=0x7f06007c;
+        public static final int upper_lay=0x7f060049;
+        public static final int verified=0x7f060090;
+        public static final int viewForgotPassword=0x7f060019;
+        public static final int viewLay=0x7f060012;
+        public static final int view_tracking_list=0x7f060082;
+        public static final int word_count=0x7f060074;
+        public static final int youtubeLay=0x7f060069;
     }
     public static final class layout {
         public static final int activity_splash=0x7f030000;
         public static final int featured_list_item=0x7f030001;
-        public static final int log_in=0x7f030002;
-        public static final int main_activity=0x7f030003;
-        public static final int not_now=0x7f030004;
-        public static final int password_change=0x7f030005;
-        public static final int profile_edit=0x7f030006;
-        public static final int select_team=0x7f030007;
-        public static final int sign_up=0x7f030008;
-        public static final int stream_list_item=0x7f030009;
-        public static final int tracking_list_item=0x7f03000a;
-        public static final int view_account=0x7f03000b;
-        public static final int view_featured=0x7f03000c;
-        public static final int view_pounds=0x7f03000d;
-        public static final int view_search=0x7f03000e;
-        public static final int view_settings=0x7f03000f;
-        public static final int view_stream=0x7f030010;
-        public static final int view_tracking=0x7f030011;
+        public static final int footer_add_player=0x7f030002;
+        public static final int invite_friend=0x7f030003;
+        public static final int log_in=0x7f030004;
+        public static final int main_activity=0x7f030005;
+        public static final int menu_list=0x7f030006;
+        public static final int menu_row_item=0x7f030007;
+        public static final int not_now=0x7f030008;
+        public static final int password_change=0x7f030009;
+        public static final int player_details=0x7f03000a;
+        public static final int profile_edit=0x7f03000b;
+        public static final int receive_list_item=0x7f03000c;
+        public static final int select_team=0x7f03000d;
+        public static final int send_a_pound=0x7f03000e;
+        public static final int sent_list_item=0x7f03000f;
+        public static final int sign_up=0x7f030010;
+        public static final int stream_list_item=0x7f030011;
+        public static final int tracking_list_item=0x7f030012;
+        public static final int view_about=0x7f030013;
+        public static final int view_account=0x7f030014;
+        public static final int view_featured=0x7f030015;
+        public static final int view_pounds=0x7f030016;
+        public static final int view_search=0x7f030017;
+        public static final int view_settings=0x7f030018;
+        public static final int view_stream=0x7f030019;
+        public static final int view_tracking=0x7f03001a;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050002;
+        public static final int action_settings=0x7f070001;
+        public static final int app_name=0x7f070000;
+        public static final int hello_world=0x7f070002;
     }
     public static final class style {
         /** 
@@ -225,11 +418,238 @@ public final class R {
         res/values-v11/styles.xml on API 14+ devices.
     
  API 14 theme customizations can go here. 
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f080003;
+        public static final int MenuDrawer=0x7f080004;
+        public static final int MenuDrawer_Widget=0x7f080005;
+        public static final int MenuDrawer_Widget_Category=0x7f080006;
+        public static final int MenuDrawer_Widget_Title=0x7f080007;
+        public static final int MenuDrawerStyle=0x7f080008;
+        public static final int MenuDrawerStyle_Bottom=0x7f08000b;
+        public static final int MenuDrawerStyle_Right=0x7f080009;
+        public static final int MenuDrawerStyle_Top=0x7f08000a;
+        public static final int Widget=0x7f080001;
+        /**  Base theme for the menu drawer. 
+         */
+        public static final int Widget_MenuDrawer=0x7f080002;
     }
+    public static final class styleable {
+        /**  Styleables used for styling the menu drawer. 
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #MenuDrawer_mdActiveIndicator com.shnarped.activites:mdActiveIndicator}</code></td><td> Drawable used as indicator for the active view.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdAllowIndicatorAnimation com.shnarped.activites:mdAllowIndicatorAnimation}</code></td><td> Whether the indicator should be animated between active views.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdContentBackground com.shnarped.activites:mdContentBackground}</code></td><td> Drawable to use for the background of the content.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdDropShadow com.shnarped.activites:mdDropShadow}</code></td><td> Drawable used for the drop shadow.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdDropShadowColor com.shnarped.activites:mdDropShadowColor}</code></td><td> The color of the drop shadow.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdDropShadowEnabled com.shnarped.activites:mdDropShadowEnabled}</code></td><td> Defines whether the content will have a dropshadow onto the menu.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdDropShadowSize com.shnarped.activites:mdDropShadowSize}</code></td><td> The size of the drop shadow.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdMaxAnimationDuration com.shnarped.activites:mdMaxAnimationDuration}</code></td><td> The maximum animation duration </td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdMenuBackground com.shnarped.activites:mdMenuBackground}</code></td><td> Drawable to use for the background of the menu.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdMenuSize com.shnarped.activites:mdMenuSize}</code></td><td> The size of the menu.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdTouchBezelSize com.shnarped.activites:mdTouchBezelSize}</code></td><td> The touch bezel size.</td></tr>
+           </table>
+           @see #MenuDrawer_mdActiveIndicator
+           @see #MenuDrawer_mdAllowIndicatorAnimation
+           @see #MenuDrawer_mdContentBackground
+           @see #MenuDrawer_mdDropShadow
+           @see #MenuDrawer_mdDropShadowColor
+           @see #MenuDrawer_mdDropShadowEnabled
+           @see #MenuDrawer_mdDropShadowSize
+           @see #MenuDrawer_mdMaxAnimationDuration
+           @see #MenuDrawer_mdMenuBackground
+           @see #MenuDrawer_mdMenuSize
+           @see #MenuDrawer_mdTouchBezelSize
+         */
+        public static final int[] MenuDrawer = {
+            0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004,
+            0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008,
+            0x7f010009, 0x7f01000a, 0x7f01000b
+        };
+        /**
+          <p>
+          @attr description
+           Drawable used as indicator for the active view. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name android:mdActiveIndicator
+        */
+        public static final int MenuDrawer_mdActiveIndicator = 3;
+        /**
+          <p>
+          @attr description
+           Whether the indicator should be animated between active views. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:mdAllowIndicatorAnimation
+        */
+        public static final int MenuDrawer_mdAllowIndicatorAnimation = 9;
+        /**
+          <p>
+          @attr description
+           Drawable to use for the background of the content. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name android:mdContentBackground
+        */
+        public static final int MenuDrawer_mdContentBackground = 0;
+        /**
+          <p>
+          @attr description
+           Drawable used for the drop shadow. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name android:mdDropShadow
+        */
+        public static final int MenuDrawer_mdDropShadow = 7;
+        /**
+          <p>
+          @attr description
+           The color of the drop shadow. Default is #FF000000. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:mdDropShadowColor
+        */
+        public static final int MenuDrawer_mdDropShadowColor = 6;
+        /**
+          <p>
+          @attr description
+           Defines whether the content will have a dropshadow onto the menu. Default is true. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:mdDropShadowEnabled
+        */
+        public static final int MenuDrawer_mdDropShadowEnabled = 4;
+        /**
+          <p>
+          @attr description
+           The size of the drop shadow. Default is 6dp 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:mdDropShadowSize
+        */
+        public static final int MenuDrawer_mdDropShadowSize = 5;
+        /**
+          <p>
+          @attr description
+           The maximum animation duration 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:mdMaxAnimationDuration
+        */
+        public static final int MenuDrawer_mdMaxAnimationDuration = 10;
+        /**
+          <p>
+          @attr description
+           Drawable to use for the background of the menu. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name android:mdMenuBackground
+        */
+        public static final int MenuDrawer_mdMenuBackground = 1;
+        /**
+          <p>
+          @attr description
+           The size of the menu. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:mdMenuSize
+        */
+        public static final int MenuDrawer_mdMenuSize = 2;
+        /**
+          <p>
+          @attr description
+           The touch bezel size. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:mdTouchBezelSize
+        */
+        public static final int MenuDrawer_mdTouchBezelSize = 8;
+    };
 }

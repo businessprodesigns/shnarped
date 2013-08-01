@@ -60,6 +60,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="7dip"/>
 			</RelativeLayout>
+			 <ImageView 
+                    android:id="@+id/twitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/twitter_bird"
+                    android:layout_below="@+id/pound"
+                    android:layout_toLeftOf="@+id/pound"/>
             <LinearLayout
                 android:id="@+id/tracking"
                 android:layout_width="wrap_content"
@@ -103,6 +110,7 @@
                     android:text="push off"
                     android:textColor="#fff"
                     android:textSize="8dp" />
+               
             </LinearLayout>
         </RelativeLayout>
         <ImageView 

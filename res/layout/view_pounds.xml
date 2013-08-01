@@ -8,12 +8,62 @@
         android:id="@+id/bottom_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dip">
         <TextView 
             android:id="@+id/poundTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 Pound ******"/>
-        
+            android:textColor="#7e0202"
+            android:text="1 pound"
+            android:layout_marginLeft="3dip"/>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginRight="4dip"
+            android:orientation="horizontal">
+        <Button 
+            android:id="@+id/receive_btn"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:text="Received"
+            android:textColor="#fff"
+            android:textSize="9sp"
+            android:background="@drawable/receive_selected"/>
+        <Button 
+            android:id="@+id/send_btn"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:text="Sent"
+            android:textColor="#fff"
+            android:textSize="9sp"
+            android:background="@drawable/send_normal"/>
+        </LinearLayout>
     </LinearLayout>
+    <ImageView 
+        android:id="@+id/devider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/greenpucklines"
+        android:layout_marginTop="5dip"
+        android:layout_below="@+id/bottom_header"/>
+    <ListView 
+        android:id="@+id/received_list"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dip"
+        android:layout_below="@+id/devider">
+        
+    </ListView>
+    <ListView 
+        android:id="@+id/send_list"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dip"
+        android:layout_below="@+id/devider"
+        android:visibility="gone">
+        
+    </ListView>
 </RelativeLayout>

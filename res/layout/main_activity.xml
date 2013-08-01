@@ -9,7 +9,25 @@
         android:id="@+id/MainHeaderLay"
         android:layout_width="match_parent"
         android:layout_height="40dip">
-
+	<Button 
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="20dip"
+            android:text="Edit"
+            android:textSize="10dp"
+            android:layout_margin="5dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/header_btn"
+            android:visibility="gone"/>
+	<ImageButton
+            android:id="@+id/openlist"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/open_list" />
         <TextView
             android:id="@+id/headerTxt"
             android:layout_width="wrap_content"
@@ -29,7 +47,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="5dip"
-            android:background="@drawable/allsitelistdesign_all_corner"
+            android:background="@drawable/header_btn"
             android:visibility="gone"/>
     </RelativeLayout>
 	<LinearLayout

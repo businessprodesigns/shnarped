@@ -1,8 +1,10 @@
 package com.shnarped.views;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
@@ -55,5 +57,6 @@ public class ViewSettings implements OnClickListener {
 			mActivity.viewLayout.addView(mViewSettings.getView());*/
 		}
 	}
+	
 
 }

@@ -1,8 +1,10 @@
 package com.shnarped.views;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
@@ -39,11 +41,11 @@ public class ViewAccount implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.invite_frnd) {
-			
+			InviteFriend();
 		}else if (v.getId() == R.id.view_tracking_list) {
 			
 		}else if (v.getId() == R.id.set_fav_team) {
-			
+			selectLeague();
 		}else if (v.getId() == R.id.settings) {
 			mActivity.viewLayout.removeAllViews();
 			mViewSettings = new ViewSettings(mActivity);
@@ -51,4 +53,98 @@ public class ViewAccount implements OnClickListener {
 		}
 		
 	}
+	
+	public void selectLeague(){
+		
+		final Dialog dialog = new Dialog(mActivity);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.select_team);
+		dialog.setCancelable(false);
+
+		Button t1 = (Button) dialog
+				.findViewById(R.id.t1);
+		t1.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});Button t2 = (Button) dialog
+				.findViewById(R.id.t2);
+		t2.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+		Button t3 = (Button) dialog
+				.findViewById(R.id.t3);
+		t3.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+		Button t4 = (Button) dialog
+				.findViewById(R.id.t4);
+		t4.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+		Button t5 = (Button) dialog
+				.findViewById(R.id.t5);
+		t5.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+		Button cancel = (Button) dialog
+				.findViewById(R.id.cancel);
+		cancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+
+		dialog.show();
+	}
+	
+	public void InviteFriend(){
+		
+		final Dialog dialog = new Dialog(mActivity);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.invite_friend);
+		dialog.setCancelable(false);
+
+		Button t1 = (Button) dialog
+				.findViewById(R.id.t1);
+		t1.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});Button t2 = (Button) dialog
+				.findViewById(R.id.t2);
+		t2.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+		
+		Button cancel = (Button) dialog
+				.findViewById(R.id.cancel);
+		cancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+
+		dialog.show();
+	}
+
 }

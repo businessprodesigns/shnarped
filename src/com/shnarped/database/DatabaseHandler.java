@@ -27,6 +27,49 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 	private boolean createDatabase = false;
 	private boolean upgradeDatabase = false;
 	
+	// Table User
+    public static final String USER_TABLE = "User";
+    // User Table Columns names
+    public static final String USER_ID = "id";
+    public static final String USER_FRIST_NAME = "first_name";
+    public static final String USER_LAST_NAME = "last_name";
+    public static final String USER_EMAIL= "email";
+    public static final String USER_TWITTER = "twitter";
+    public static final String USER_AVATAR = "avatar";
+    public static final String USER_GENDER = "gender";
+    public static final String USER_BIRTHDATE = "birthdate";
+    public static final String USER_VERIFIED = "verified";
+    public static final String USER_FAV_TEAM_ID = "favorite_team_id";
+    public static final String USER_FAV_TEAM = "favorite_team";
+    public static final String USER_POUND_COUNT = "pound_count";
+    public static final String USER_FOLLOWING = "following";
+    public static final String USER_PUSH = "push";
+    public static final String USER_PLAYER_ID = "player_id";
+    //public static final String USER_PLAYER = "player";
+    
+ // Table Player
+    public static final String PLAYER_TABLE = "Player";
+    // User Table Columns names
+    public static final String PLAYER_ID = "id";
+    public static final String PLAYER_FRIST_NAME = "first_name";
+    public static final String PLAYER_LAST_NAME = "last_name";
+    public static final String PLAYER_BIRTHDATE = "birthdate";
+    public static final String PLAYER_HOMETOWN = "hometown";
+    public static final String PLAYER_IMAGE = "image";
+    public static final String PLAYER_POSITION = "position";
+    public static final String PLAYER_JERSEY = "jersey";
+    public static final String PLAYER_WEIGHT = "weight";
+    public static final String PLAYER_WEIGHT_METRIC = "weight_metric";
+    public static final String PLAYER_HEIGHT = "height";
+    public static final String PLAYER_HEIGHT_METRIC = "height_metric";
+    public static final String PLAYER_SHOOTS = "shoots";
+    public static final String PLAYER_CAP_HIT = "cap_hit";
+    public static final String PLAYER_CONT_THRU = "contact_thru";
+    public static final String PLAYER_CURR_TEAM_ID = "current_team_id";
+    public static final String PLAYER_CURRENT_TEAM = "current_team";
+    public static final String PLAYER_QUS = "questions";
+    public static final String PLAYER_Q_ANS = "questions_answered";
+	
 	public DatabaseHandler(Context context) {
 		super(context, DB_NAME, null, DB_VERSION);
 		_context = context;
@@ -36,7 +79,42 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		createDatabase = true;
+		//createDatabase = true;
+		String CREATE_USER_TABLE = "CREATE TABLE " + USER_TABLE + "("
+                + USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " 
+                + USER_FRIST_NAME + " TEXT, "
+                + USER_LAST_NAME + " TEXT, " 
+                + USER_EMAIL + " TEXT , "
+                + USER_TWITTER + " TEXT, "
+                + USER_AVATAR +  " TEXT, "
+                + USER_GENDER + " TEXT, "
+                + USER_BIRTHDATE + " TEXT, "
+                + USER_VERIFIED + " INTEGER, "
+                + USER_FAV_TEAM_ID + " TEXT ,"
+                + USER_FAV_TEAM + " TEXT, "
+                + USER_POUND_COUNT + " TEXT, "
+                + USER_FOLLOWING +  " TEXT, "
+                + USER_PUSH + " TEXT, "
+                + USER_PLAYER_ID + " TEXT, "
+                + " )";
+		
+		String CREATE_PLAYER_TABLE = "CREATE TABLE " + PLAYER_TABLE + "("
+                        + PLAYER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " 
+                        + PLAYER_FRIST_NAME + " TEXT, "
+                        + PLAYER_LAST_NAME + " TEXT, " 
+                        + PLAYER_BIRTHDATE + " TEXT , "
+                        + PLAYER_HOMETOWN + " TEXT, "
+                        + PLAYER_IMAGE +  " TEXT, "
+                        + PLAYER_POSITION + " TEXT, "
+                        + PLAYER_JERSEY + " TEXT, "
+                        + PLAYER_WEIGHT + " INTEGER, "
+                        + PLAYER_WEIGHT_METRIC + " TEXT ,"
+                        + PLAYER_HEIGHT + " TEXT, "
+                        + PLAYER_HEIGHT_METRIC + " TEXT, "
+                        + USER_FOLLOWING +  " TEXT, "
+                        + USER_PUSH + " TEXT, "
+                        + USER_PLAYER_ID + " TEXT, "
+                        + " )";
 		
 	}
 

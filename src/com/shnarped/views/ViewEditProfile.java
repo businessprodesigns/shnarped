@@ -33,6 +33,7 @@ public class ViewEditProfile implements OnClickListener {
 		editTwitter = (EditText)_view2.findViewById(R.id.editTwitter);
 		save = (Button)_view2.findViewById(R.id.save);
 		save.setOnClickListener(this);
+		editEmail.setEnabled(false);
 	}
 	public View getView() {
 		return _view;
