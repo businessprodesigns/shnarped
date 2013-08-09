@@ -17,14 +17,16 @@
 		    android:layout_marginTop="7dip"
 		    android:textColor="#fff"
 		    android:layout_centerHorizontal="true"/>
+
         <Button
             android:id="@+id/t1"
             android:layout_width="250dip"
             android:layout_height="40dip"
-            android:layout_marginTop="30dip"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dip"
+            android:background="@drawable/edittextinnershadow"
             android:text="NHL"
-            android:background="@drawable/edittextinnershadow" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/t2"
@@ -33,6 +35,7 @@
             android:layout_below="@id/t1"
             android:layout_centerHorizontal="true"
             android:text="AHL"
+            android:textStyle="bold"
             android:layout_marginTop="10dip"
             android:background="@drawable/edittextinnershadow" />
 
@@ -43,6 +46,7 @@
             android:layout_below="@id/t2"
             android:layout_centerHorizontal="true"
             android:text="ECHL"
+            android:textStyle="bold"
             android:layout_marginTop="10dip"
             android:background="@drawable/edittextinnershadow" />
 
@@ -53,6 +57,7 @@
             android:layout_below="@id/t3"
             android:layout_centerHorizontal="true"
             android:text="CHL"
+            android:textStyle="bold"
             android:layout_marginTop="10dip"
             android:background="@drawable/edittextinnershadow" />
 
@@ -64,6 +69,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dip"
             android:text="All Leagues"
+            android:textStyle="bold"
             android:background="@drawable/edittextinnershadow" />
 
         <Button
@@ -72,10 +78,12 @@
             android:layout_height="40dip"
             android:layout_below="@id/t5"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dip"
-            
+            android:layout_marginTop="20dp"
+            android:background="@drawable/cancelbtninnershadow"
             android:text="Cancel"
-            android:background="@drawable/edittextinnershadow" />
+            android:textStyle="bold"
+            android:textColor="#ffffff" />
+
     </RelativeLayout>
 
 </RelativeLayout>

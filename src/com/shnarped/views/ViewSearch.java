@@ -1,23 +1,27 @@
 package com.shnarped.views;
 
+import android.app.ActionBar.LayoutParams;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 
 import com.shnarped.activites.R;
 import com.shnarped.activity.MainActivity;
+import com.shnarped.utils.Utilities;
 public class ViewSearch implements OnClickListener {
 
 	MainActivity mActivity;
 	private LayoutInflater inflater = null;
 	View _view;
 	Button team,player_with_stalls,verified,most_points,most_pounds;
-	public ViewSearch(MainActivity a) {
+	Context _context;
+	public ViewSearch(MainActivity a,Context context) {
 		this.mActivity = a;
+		_context = context;
 		inflater = (LayoutInflater) mActivity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		_view = inflater.inflate(R.layout.view_search, null);
 		init(_view);
@@ -34,6 +38,12 @@ public class ViewSearch implements OnClickListener {
 		verified.setOnClickListener(this);
 		most_points.setOnClickListener(this);
 		most_pounds.setOnClickListener(this);
+		
+		team.setTypeface(new Utilities.FontsClass(_context).getCollegeECFonts());
+		player_with_stalls.setTypeface(new Utilities.FontsClass(_context).getCollegeECFonts());
+		verified.setTypeface(new Utilities.FontsClass(_context).getCollegeECFonts());
+		most_points.setTypeface(new Utilities.FontsClass(_context).getCollegeECFonts());
+		most_pounds.setTypeface(new Utilities.FontsClass(_context).getCollegeECFonts());
 	}
 	public View getView() {
 		return _view;
@@ -58,10 +68,11 @@ public class ViewSearch implements OnClickListener {
 	}
 	public void selectLeague(int check){
 		
-		final Dialog dialog = new Dialog(mActivity);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		final Dialog dialog = new Dialog(_context, R.style.CustomTheme);
 		dialog.setContentView(R.layout.select_team);
-		dialog.setCancelable(false);
+		dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		
+		
 
 		Button t1 = (Button) dialog
 				.findViewById(R.id.t1);

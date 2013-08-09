@@ -3,6 +3,7 @@ package com.shnarped.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -10,17 +11,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.shnarped.activites.R;
@@ -68,20 +67,22 @@ public class MainActivity extends Activity implements OnClickListener {
         
 		Utilities.USER_LOGEDIN = true;
 		
-		featuredTab = (Button) findViewById(R.id.featuredTab);
+		/*featuredTab = (Button) findViewById(R.id.featuredTab);
 		streamTab = (Button) findViewById(R.id.streamTab);
 		SearchTab = (Button) findViewById(R.id.searchTab);
 		PoundsTab = (Button) findViewById(R.id.poundTab);
-		AccountTab = (Button) findViewById(R.id.accountTab);
+		AccountTab = (Button) findViewById(R.id.accountTab);*/
 		tracking = (Button) findViewById(R.id.tracking);
 		openlist =(ImageButton)findViewById(R.id.openlist);
         headertitleTxt = (TextView)findViewById(R.id.headerTxt);
+        headertitleTxt.setTypeface(new Utilities.FontsClass(this).getCollegeFonts());
+        
         viewLayout = (LinearLayout) findViewById(R.id.tabcontent);
-        featuredTab.setOnClickListener(this);
+       /* featuredTab.setOnClickListener(this);
         streamTab.setOnClickListener(this);
         SearchTab.setOnClickListener(this);
         PoundsTab.setOnClickListener(this);
-        AccountTab.setOnClickListener(this);
+        AccountTab.setOnClickListener(this);*/
         openlist.setOnClickListener(this);
         init();
 	}
@@ -133,7 +134,7 @@ public class MainActivity extends Activity implements OnClickListener {
         
         mList.setAdapter(mAdapter);
         
-        mList.setOnItemClickListener(mItemClickListener);
+        //mList.setOnItemClickListener(mItemClickListener);
 
         //mMenuDrawer.setMenuView(mList);
         mMenuDrawer.setMenuView(_view);
@@ -145,15 +146,16 @@ public class MainActivity extends Activity implements OnClickListener {
 		public int pic;
 	}
 	public void load_selected_view(int btnSelectedPosition){
+		tracking.setVisibility(View.GONE);
 		if (btnSelectedPosition == 0) {
     		MainActivity.this.viewLayout.removeAllViews();
-    		mViewFeatured = new ViewFeatured(MainActivity.this);
+    		mViewFeatured = new ViewFeatured(MainActivity.this,MainActivity.this);
     		MainActivity.this.viewLayout.addView(mViewFeatured.getView());
     		//Utils.CurrentView = mViewFeatured.getView();
     		
     	}else if (btnSelectedPosition == 1) {
     		MainActivity.this.viewLayout.removeAllViews();
-    		mViewStream = new ViewStream(MainActivity.this);
+    		mViewStream = new ViewStream(MainActivity.this,MainActivity.this);
     		MainActivity.this.viewLayout.addView(mViewStream.getView());
     		
     		tracking.setVisibility(View.VISIBLE);
@@ -161,7 +163,7 @@ public class MainActivity extends Activity implements OnClickListener {
     		//Utils.CurrentView = mViewHotCoupons.getView();
     	}else if (btnSelectedPosition == 2) {
     		MainActivity.this.viewLayout.removeAllViews();
-    		mViewSearch = new ViewSearch(MainActivity.this);
+    		mViewSearch = new ViewSearch(MainActivity.this,MainActivity.this);
     		MainActivity.this.viewLayout.addView(mViewSearch.getView());
     		
     		//Utils.CurrentView = mViewExpiringSoonActivity.getView();
@@ -221,16 +223,16 @@ public class MainActivity extends Activity implements OnClickListener {
     	}*/
     	
 	}
-	private AdapterView.OnItemClickListener mItemClickListener = new AdapterView.OnItemClickListener() {
+	/*private AdapterView.OnItemClickListener mItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             //mActivePosition = position;
             mMenuDrawer.setActiveView(view, position);
             
-            
+            Log.i("entry", "entry"+mItems.get(position).isHeader);
             mAdapter.setSelectedPosition(position);
             
-            if(!mItems.get(position).isHeader){
+            if(!stringList.get(position).isHeader){
             
             switch (position) {
 			case 0: // account
@@ -283,13 +285,13 @@ public class MainActivity extends Activity implements OnClickListener {
         }
         }
     };
-	
+	*/
 	private class MenuAdapter extends BaseAdapter {
 
         
     	private int selectedPos = 0;
-    	
-    	
+    	private RelativeLayout layout_relative;
+    	private ViewHolder viewholder;
         MenuAdapter(ArrayList<GenrtArraylist> stringList) {
             mItems = stringList;
         }
@@ -337,29 +339,36 @@ public class MainActivity extends Activity implements OnClickListener {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             View v = convertView;
             Object item = getItem(position);
 
             if (v == null) {
-                v = getLayoutInflater().inflate(R.layout.menu_row_item, parent, false);
+            	layout_relative = (RelativeLayout)getLayoutInflater().inflate(R.layout.menu_row_item, parent, false);
+            	viewholder = new ViewHolder();
+            	viewholder.menu_item_name = (TextView) layout_relative.findViewById(R.id.menu_item_name);
+            	viewholder.menu_item_img  = (ImageButton) layout_relative.findViewById(R.id.menu_item_img);
+            	layout_relative.setTag(viewholder);
+            }else{
+            	layout_relative = (RelativeLayout) convertView;
+	        	viewholder 		= (ViewHolder) layout_relative.getTag();
             }
 
-            TextView tv = (TextView) v.findViewById(R.id.menu_item_name);
-            ImageView iv = (ImageView) v.findViewById(R.id.menu_item_img);
-            tv.setText(mItems.get(position).name);
-            iv.setImageResource(mItems.get(position).pic);
+            
+            viewholder.menu_item_name.setText(mItems.get(position).name);
+            viewholder.menu_item_img.setImageResource(mItems.get(position).pic);
             
             /*LayoutParams params = tv.getLayoutParams();
             params.height = 70;
             tv.setLayoutParams(params);*/
             
             if(mItems.get(position).isHeader){
-            	tv.setBackgroundColor(Color.DKGRAY);
+            	viewholder.menu_item_name.setBackgroundColor(Color.DKGRAY);
+            	viewholder.menu_item_img.setVisibility(View.GONE);
             	//tv.setHeight(30);
             	
             }else{
-            	tv.setBackgroundColor(Color.BLACK);
+            	viewholder.menu_item_name.setBackgroundColor(Color.BLACK);
             }
             //iv.setImageDrawable(mItems.get(position).pic);
             //tv.setCompoundDrawablesWithIntrinsicBounds(((Item) item).mIconRes, 0, 0, 0);
@@ -374,22 +383,87 @@ public class MainActivity extends Activity implements OnClickListener {
 	        }*/
             
             
-            v.setTag(R.id.mdActiveViewPosition, position);
+            
+            layout_relative.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+			            
+			            if(!stringList.get(position).isHeader){
+			            
+			            switch (position) {
+						case 0: // account
+							load_selected_view(4); 
+							break;
+						case 1: // header feature
+							load_selected_view(1);
+							break;	
+						case 2: //stream
+							load_selected_view(1);
+							break;	
+						case 3: //adv search
+							load_selected_view(2);
+							break;	
+						case 4: //news feed
+							load_selected_view(0);
+							break;
+						case 5: //pound received
+							load_selected_view(3);
+							break;	
+						case 6: //pound sent
+							load_selected_view(3);
+							break;	
+						case 7: // tracking
+							load_selected_view(5);
+							break;	
+						case 8: // header account
+							load_selected_view(1);
+							break;	
+						case 9: // invite friends
+								InviteFriend();
+								//load_selected_view(2);
+								break;	
+						case 10: //change pass
+								load_selected_view(6);
+								break;	
+						case 11: // about shnarped
+							load_selected_view(7);
+							break;	
+						case 12: // log out
+							Utilities.USER_LOGEDIN = false;
+							load_selected_view(4);
+							mAdapter.notifyDataSetChanged();
+								break;	
+						
+						default:
+							break;
+						}
+			            mMenuDrawer.closeMenu();
+			        }
+				}
+			});
 
             /*if (position == mActivePosition) {
                 mMenuDrawer.setActiveView(v, position);
             }*/
 
-            return v;
+            return layout_relative;
         }
     }
 	
+	static class ViewHolder {
+		int position;
+		ImageButton menu_item_img;
+		TextView menu_item_name;
+		
+	}
 	public void InviteFriend(){
 		
-		final Dialog dialog = new Dialog(MainActivity.this);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		final Dialog dialog = new Dialog(MainActivity.this, R.style.CustomTheme);
 		dialog.setContentView(R.layout.invite_friend);
-		dialog.setCancelable(false);
+		dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		
+		
 
 		Button t1 = (Button) dialog
 				.findViewById(R.id.t1);
@@ -421,7 +495,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		if (v.getId() == R.id.featuredTab) {
+		/*if (v.getId() == R.id.featuredTab) {
 			tracking.setVisibility(View.INVISIBLE);
 			load_selected_view(0);
 		}else if (v.getId() == R.id.streamTab) {
@@ -435,7 +509,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		}else if (v.getId() == R.id.accountTab) {
 			tracking.setVisibility(View.INVISIBLE);
 			load_selected_view(4);
-		}else if (v.getId() == R.id.tracking) {
+		}else */if (v.getId() == R.id.tracking) {
 			tracking.setVisibility(View.INVISIBLE);
 			MainActivity.this.viewLayout.removeAllViews();
     		mViewTracking = new ViewTracking(MainActivity.this);

@@ -7,29 +7,31 @@
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#96dbba" >
+        android:background="@drawable/search_bg" >
 
         <EditText
             android:id="@+id/search"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dip"
-            android:paddingLeft="10dip"
-            android:hint="Type player or team name to search"
-            android:textSize="11sp"
-            android:textColorHint="#9f9c9c"
+            android:layout_height="30dp"
             android:layout_centerVertical="true"
-            android:background="@drawable/edittextinnershadow_search" />
+            android:layout_margin="5dip"
+            android:background="@drawable/edittextinnershadow_search"
+            android:hint="Type player or team name to search"
+            android:paddingLeft="10dip"
+            android:textColorHint="#9f9c9c"
+            android:textSize="11sp" />
+
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/searchBar"
-        android:layout_marginTop="10dip"
         android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip" >
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="20dp"
+        android:gravity="top" >
 
         <Button
             android:id="@+id/team"
@@ -37,9 +39,11 @@
             android:layout_height="wrap_content"
             android:background="@drawable/searchbutton"
             android:drawableLeft="@drawable/search_jersey"
+            android:gravity="left|center_vertical"
             android:paddingLeft="20dip"
-            android:text="Team"
-            android:textColor="#7e0202" />
+            android:text="      Team"
+            android:textColor="#7e0202"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/player_with_stalls"
@@ -48,9 +52,12 @@
             android:layout_below="@id/team"
             android:background="@drawable/searchbutton"
             android:drawableLeft="@drawable/hockeystick_icon"
+            android:gravity="left|center_vertical"
             android:paddingLeft="20dip"
             android:textColor="#7e0202"
-            android:text="Player With Stalls" />
+            android:text="      Player With Stalls"
+            android:textSize="20sp"
+             />
 
         <Button
             android:id="@+id/verified"
@@ -60,8 +67,11 @@
             android:background="@drawable/searchbutton"
             android:drawableLeft="@drawable/verified_icon"
             android:paddingLeft="20dip"
-            android:text="Verified"
-            android:textColor="#7e0202" />
+            android:gravity="left|center_vertical"
+            android:text="      Verified"
+            android:textColor="#7e0202"
+            android:textSize="20sp"
+             />
 
         <Button
             android:id="@+id/most_points"
@@ -71,8 +81,11 @@
             android:background="@drawable/searchbutton"
             android:drawableLeft="@drawable/hotstreak"
             android:paddingLeft="20dip"
-            android:text="Most Points"
-            android:textColor="#7e0202" />
+            android:gravity="left|center_vertical"
+            android:text="      Most Points"
+            android:textColor="#7e0202"
+            android:textSize="20sp"
+             />
 
         <Button
             android:id="@+id/most_pounds"
@@ -82,8 +95,11 @@
             android:background="@drawable/searchbutton"
             android:drawableLeft="@drawable/highpoundcount"
             android:paddingLeft="20dip"
-            android:text="Most Pounds"
-            android:textColor="#7e0202" />
+            android:gravity="left|center_vertical"
+            android:text="      Most Pounds"
+            android:textColor="#7e0202" 
+            android:textSize="20sp"
+            />
     </RelativeLayout>
 
 </RelativeLayout>

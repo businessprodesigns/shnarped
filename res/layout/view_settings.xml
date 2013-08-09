@@ -13,44 +13,49 @@
             android:id="@+id/edit_prof"
             android:layout_width="240dip"
             android:layout_height="40dip"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/allsitelistdesign_top_corner"
             android:drawableRight="@drawable/arrow_right"
             android:paddingRight="5dip"
-            android:layout_centerHorizontal="true"
-            android:text="Edit Profile" />
+            android:text="Edit Profile"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/change_pass"
             android:layout_width="240dip"
             android:layout_height="40dip"
+            android:layout_below="@id/edit_prof"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/allsitelistdesign_bottom_corner"
             android:drawableRight="@drawable/arrow_right"
             android:paddingRight="5dip"
-            android:layout_centerHorizontal="true"
             android:text="Change Password"
-            android:layout_below="@id/edit_prof" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/about"
             android:layout_width="240dip"
             android:layout_height="40dip"
+            android:layout_below="@id/change_pass"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
             android:background="@drawable/allsitelistdesign_all_corner"
             android:drawableRight="@drawable/arrow_right"
             android:paddingRight="5dip"
-            android:layout_marginTop="10dip"
             android:text="About"
-            android:layout_below="@id/change_pass" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/signout"
-            android:layout_width="250dip"
+            android:layout_width="240dip"
             android:layout_height="40dip"
             android:layout_below="@id/about"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dip"
             android:background="@drawable/allsitelistdesign_all_corner"
-            android:text="Sign Out" />
+            android:text="Sign Out"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.shnarped.views;
 
 import android.app.Dialog;
+import android.app.ActionBar.LayoutParams;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,10 +57,10 @@ public class ViewAccount implements OnClickListener {
 	
 	public void selectLeague(){
 		
-		final Dialog dialog = new Dialog(mActivity);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
+		final Dialog dialog = new Dialog(mActivity, R.style.CustomTheme);
 		dialog.setContentView(R.layout.select_team);
-		dialog.setCancelable(false);
+		dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
 		Button t1 = (Button) dialog
 				.findViewById(R.id.t1);
@@ -113,11 +114,9 @@ public class ViewAccount implements OnClickListener {
 	}
 	
 	public void InviteFriend(){
-		
-		final Dialog dialog = new Dialog(mActivity);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		final Dialog dialog = new Dialog(mActivity, R.style.CustomTheme);
 		dialog.setContentView(R.layout.invite_friend);
-		dialog.setCancelable(false);
+		dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
 		Button t1 = (Button) dialog
 				.findViewById(R.id.t1);

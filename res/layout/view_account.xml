@@ -15,7 +15,7 @@
             android:id="@+id/prof_img"
             android:layout_width="60dip"
             android:layout_height="60dip"
-            android:background="@drawable/ic_launcher" />
+            android:background="@drawable/profile_pic" />
 
         <RelativeLayout
             android:id="@+id/prof_name_lay"
@@ -28,7 +28,7 @@
                 android:id="@+id/prof_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XXXXX XXXXX" />
+                android:text="Tester Tester" />
 
             <LinearLayout
                 android:id="@+id/fav"
@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/prof_fav"
-                    android:text="XXXXX XXXXX" />
+                    android:text="Unspecified" />
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
@@ -67,29 +67,32 @@
             android:background="@drawable/allsitelistdesign_top_corner"
             android:drawableRight="@drawable/arrow_right"
             android:paddingRight="5dip"
-            android:text="Invite Friends" />
+            android:text="Invite Friends"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/view_tracking_list"
             android:layout_width="240dip"
             android:layout_height="40dip"
+            android:layout_below="@id/invite_frnd"
             android:layout_centerHorizontal="true"
             android:background="@drawable/allsitelistdesign"
             android:drawableRight="@drawable/arrow_right"
             android:paddingRight="5dip"
-            android:layout_below="@id/invite_frnd"
-            android:text="View Tracking List" />
+            android:text="View Tracking List"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/set_fav_team"
             android:layout_width="240dip"
             android:layout_height="40dip"
+            android:layout_below="@id/view_tracking_list"
             android:layout_centerHorizontal="true"
             android:background="@drawable/allsitelistdesign_bottom_corner"
             android:drawableRight="@drawable/arrow_right"
             android:paddingRight="5dip"
             android:text="Set Favorite Team"
-            android:layout_below="@id/view_tracking_list" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/settings"
@@ -98,10 +101,12 @@
             android:layout_below="@id/set_fav_team"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dip"
+            android:background="@drawable/allsitelistdesign_all_corner"
             android:drawableRight="@drawable/arrow_right"
             android:paddingRight="5dip"
-            android:background="@drawable/allsitelistdesign_all_corner"
-            android:text="Settings" />
+            android:text="Settings"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
 </RelativeLayout>

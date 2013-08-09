@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.shnarped.activites.R;
+import com.shnarped.utils.Utilities;
 import com.shnarped.views.ViewFeatured;
 import com.shnarped.views.ViewSignup;
 
@@ -53,6 +54,12 @@ public class SplashScreenActivity extends Activity implements OnClickListener, O
 	    back_btn.setOnClickListener(this);
 	    back.setOnClickListener(this);
 	    //mainLay.setOnTouchListener(this);
+	    TextView name = (TextView)findViewById(R.id.name);
+	    name.setTypeface(new Utilities.FontsClass(this).getCollegeFonts());
+	    TextView tag = (TextView)findViewById(R.id.tag);
+	    tag.setTypeface(new Utilities.FontsClass(this).getEurostileBoldFonts());
+	    TextView tv_headertitle = (TextView)findViewById(R.id.tv_headertitle);
+	    name.setTypeface(new Utilities.FontsClass(this).getCollegeFonts());
 	}
 	@Override
 	public void onClick(View v) {
