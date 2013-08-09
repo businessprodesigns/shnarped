@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView
+            android:id="@+id/receiver_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dip"
+            android:layout_marginTop="3dip"
+            android:text="Padam" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/receiver_name"
+        android:layout_marginLeft="4dip"
+        android:text="Jul 17 at 18:48"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:layout_marginLeft="4dip"
+        android:text="ABXCD CVB "
+        android:textStyle="bold" />
+    <ImageView 
+        android:id="@+id/youtubeLay"
+        android:layout_width="match_parent"
+        android:layout_height="70dip"
+        android:layout_below="@+id/desc"/>
+    <TextView
+        android:id="@+id/no_pounds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/youtubeLay"
+        android:layout_marginLeft="4dip"
+        android:text="0 pounds"
+        android:textSize="10sp" />
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/no_pounds"
+        android:weightSum="1"
+        android:background="#fff"
+        android:orientation="horizontal">
+        <LinearLayout
+        android:id="@+id/deleteLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dip" >
+
+        <ImageView
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_menu_delete" />
+
+        <TextView
+            android:id="@+id/deletePound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Delete"
+            android:layout_marginRight="4dip"
+            android:layout_marginLeft="10dip" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/reportLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dip" >
+
+        <ImageView
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_dialog_info" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Report"
+            android:layout_marginRight="4dip"
+            android:layout_marginLeft="10dip" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/poundLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dip"
+        android:gravity="right" >
+
+        <ImageView
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/pound_sm" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Send a Pound"
+            android:layout_marginRight="4dip"
+            android:layout_marginLeft="15dip" />
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

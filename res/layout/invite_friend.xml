@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/inviteFrnds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="10dip"
+        android:background="#000" >
+		<TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="Invite Friends"
+		    android:layout_marginTop="7dip"
+		    android:textColor="#fff"
+		    android:layout_centerHorizontal="true"/>
+        <Button
+            android:id="@+id/t1"
+            android:layout_width="250dip"
+            android:layout_height="40dip"
+            android:layout_marginTop="30dip"
+            android:layout_centerHorizontal="true"
+            android:text="Facebook"
+            android:background="@drawable/edittextinnershadow" />
+
+        <Button
+            android:id="@+id/t2"
+            android:layout_width="250dip"
+            android:layout_height="40dip"
+            android:layout_below="@id/t1"
+            android:layout_centerHorizontal="true"
+            android:text="Twitter"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/edittextinnershadow" />
+        
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="250dip"
+            android:layout_height="40dip"
+            android:layout_below="@id/t2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/cancelbtninnershadow"
+            android:text="Cancel"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+             />
+    </RelativeLayout>
+
+</RelativeLayout>

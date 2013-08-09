@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<LinearLayout 
+    android:id="@+id/ll_linklayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+ <RelativeLayout 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+     >
+    
+  <ImageView
+      android:id="@+id/iv_linkimage"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:scaleType="fitXY"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
+       />
+
+  <ImageView
+      android:id="@+id/iv_playvideoicon"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:src="@drawable/playvideo"
+      android:visibility="gone"
+       />
+
+   </RelativeLayout>    
+  <WebView 
+       android:id="@+id/wv_videoembeded"
+       android:layout_width="match_parent"
+       android:layout_height="200dp" 
+       android:background="@android:color/transparent"
+        />
+
+  <Button
+      android:id="@+id/ll_linkname"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="8dp"
+      android:background="@android:color/transparent"
+      android:drawableLeft="@drawable/asi_time"
+      android:text="test"
+      android:textColor="#840000"
+      android:textSize="15sp"
+      android:textStyle="bold" />
+    
+</LinearLayout>
+
+</RelativeLayout>

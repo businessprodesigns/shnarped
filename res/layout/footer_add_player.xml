@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tracklistFooterLay"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:orientation="horizontal" >
+    
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/plus_icon"
+        android:layout_marginLeft="3dip"
+        android:layout_gravity="left|center_vertical"/>
+    <TextView 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Add a Player"
+        android:textColor="#800606"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dip"
+        android:layout_gravity="center_vertical"/>
+
+</LinearLayout>

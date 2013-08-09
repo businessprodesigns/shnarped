@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+
+    <TextView 
+        android:id="@+id/receiver_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:text="To: Steve"
+        android:layout_marginLeft="3dip"
+        android:textColor="#177a57"/>
+    <EditText 
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="150dip"
+        android:hint="ATTACH A MESSAGE TO YOUR POUND!"
+        android:textColorHint="#9f9c9c"
+	    android:paddingLeft="3dip"
+	    android:gravity="top|left"
+        android:layout_below="@id/receiver_name"
+        android:background="@drawable/inbox_fists_bg"/>
+    <RelativeLayout 
+        android:id="@+id/bottom_lay"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_below="@id/msg"
+        android:background="@drawable/bottom_bar">
+        <ImageView 
+            android:id="@+id/camara"
+            android:layout_width="40dip"
+            android:layout_height="30dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/camerabutton"/>
+        <TextView 
+            android:id="@+id/word_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="200"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="4dip"
+            android:textColor="#fff"/>
+    </RelativeLayout>
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bottom_lay">
+        <Button 
+            android:id="@+id/takePic"
+            android:layout_width="200dip"
+            android:layout_height="40dip"
+            android:text="Take a picture"
+            android:textColor="#7e0202"
+            android:layout_marginTop="5dip"
+            android:layout_marginBottom="5dip"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/allsitelistdesign_all_corner_signup"/>
+        <Button 
+            android:id="@+id/fromGalary"
+            android:layout_width="200dip"
+            android:layout_height="40dip"
+            android:text="Choose from gallary"
+            android:layout_below="@id/takePic"
+            android:textColor="#7e0202"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/allsitelistdesign_all_corner_signup"/>
+    </RelativeLayout>
+</RelativeLayout>
