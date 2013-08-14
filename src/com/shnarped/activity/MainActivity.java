@@ -46,8 +46,8 @@ public class MainActivity extends Activity implements OnClickListener {
     View _view;EditText search;
     
 	Button featuredTab,streamTab,SearchTab,PoundsTab,AccountTab;
-	public TextView headertitleTxt;
-	public LinearLayout viewLayout;
+	public TextView headertitleTxt,menu_item_featured,menu_item_stream,menu_item_search,menu_item_pound,menu_item_profile;
+	public LinearLayout viewLayout,ll_featured,ll_stream,ll_search,ll_pound,ll_profile;
 	ViewFeatured mViewFeatured;
 	ViewStream mViewStream;
 	ViewSearch mViewSearch;
@@ -102,6 +102,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	    		GenrtArraylist gnrtarrylist = new GenrtArraylist();
 	    		gnrtarrylist.name = Utilities.LoggedInList[i];
 	    		gnrtarrylist.pic  = Utilities.LoggedInImgs[i];
+	    		if(i==0){
+	    			gnrtarrylist.selectedColor = true;
+	    		}
 	    		
 	    		if(Utilities.LoggedInImgs[i]==-1){
 	    			gnrtarrylist.isHeader  = true;
@@ -115,6 +118,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	    		GenrtArraylist gnrtarrylist = new GenrtArraylist();
 	    		gnrtarrylist.name = Utilities.LoggedOutList[i];
 	    		gnrtarrylist.pic  = Utilities.LoggedOutImgs[i];
+	    		if(i==0){
+	    			gnrtarrylist.selectedColor = true;
+	    		}
 	    		
 	    		if(Utilities.LoggedOutImgs[i]==-1){
 	    			gnrtarrylist.isHeader  = true;
@@ -127,47 +133,78 @@ public class MainActivity extends Activity implements OnClickListener {
     	inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		_view = inflater.inflate(R.layout.menu_list, null);
 		
+		ll_featured= (LinearLayout)_view.findViewById(R.id.ll_featured);
+		ll_stream= (LinearLayout)_view.findViewById(R.id.ll_stream);
+		ll_search= (LinearLayout)_view.findViewById(R.id.ll_search);
+		ll_pound= (LinearLayout)_view.findViewById(R.id.ll_pound);
+		ll_profile= (LinearLayout)_view.findViewById(R.id.ll_profile);
+		ll_featured.setOnClickListener(this);
+		ll_stream.setOnClickListener(this);
+		ll_search.setOnClickListener(this);
+		ll_pound.setOnClickListener(this);
+		ll_profile.setOnClickListener(this);
+		
+		menu_item_featured= (TextView)_view.findViewById(R.id.menu_item_featured);
+		menu_item_stream= (TextView)_view.findViewById(R.id.menu_item_stream);
+		menu_item_search= (TextView)_view.findViewById(R.id.menu_item_search);
+		menu_item_pound= (TextView)_view.findViewById(R.id.menu_item_pound);
+		menu_item_profile= (TextView)_view.findViewById(R.id.menu_item_profile);
+		
+		
+		ll_featured.setBackgroundColor(Color.parseColor("#BFBFBF"));
+		menu_item_featured.setBackgroundColor(Color.parseColor("#BFBFBF"));
+		menu_item_featured.setTextColor(Color.parseColor("#000000"));
     	//mList = new ListView(this);
-    	mList = (ListView)_view.findViewById(R.id.menu_list);
-    	search = (EditText)_view.findViewById(R.id.search);
-        mAdapter = new MenuAdapter(stringList);
+    	//mList = (ListView)_view.findViewById(R.id.menu_list);
+    	//search = (EditText)_view.findViewById(R.id.search);
+        //mAdapter = new MenuAdapter(stringList);
         
-        mList.setAdapter(mAdapter);
+        //mList.setAdapter(mAdapter);
         
         //mList.setOnItemClickListener(mItemClickListener);
 
         //mMenuDrawer.setMenuView(mList);
         mMenuDrawer.setMenuView(_view);
+        
 	}
 	
 	public class GenrtArraylist{
 		public Boolean isHeader = false;
 		public String name="";
 		public int pic;
+		public Boolean selectedColor = false;
 	}
 	public void load_selected_view(int btnSelectedPosition){
 		tracking.setVisibility(View.GONE);
 		if (btnSelectedPosition == 0) {
+			headertitleTxt.setText("FEATURED");
     		MainActivity.this.viewLayout.removeAllViews();
-    		mViewFeatured = new ViewFeatured(MainActivity.this,MainActivity.this);
+    		if(mViewFeatured==null){
+    			mViewFeatured = new ViewFeatured(MainActivity.this,MainActivity.this);
+    		}
     		MainActivity.this.viewLayout.addView(mViewFeatured.getView());
     		//Utils.CurrentView = mViewFeatured.getView();
     		
     	}else if (btnSelectedPosition == 1) {
+    		headertitleTxt.setText("STREAM");
     		MainActivity.this.viewLayout.removeAllViews();
-    		mViewStream = new ViewStream(MainActivity.this,MainActivity.this);
+    		if(mViewStream==null){
+    			mViewStream = new ViewStream(MainActivity.this,MainActivity.this);
+    		}
     		MainActivity.this.viewLayout.addView(mViewStream.getView());
     		
     		tracking.setVisibility(View.VISIBLE);
     		tracking.setOnClickListener(this);
     		//Utils.CurrentView = mViewHotCoupons.getView();
     	}else if (btnSelectedPosition == 2) {
+    		headertitleTxt.setText("SEARCH");
     		MainActivity.this.viewLayout.removeAllViews();
     		mViewSearch = new ViewSearch(MainActivity.this,MainActivity.this);
     		MainActivity.this.viewLayout.addView(mViewSearch.getView());
     		
     		//Utils.CurrentView = mViewExpiringSoonActivity.getView();
     	}else if (btnSelectedPosition == 3) {
+    		headertitleTxt.setText("POUNDS");
     		MainActivity.this.viewLayout.removeAllViews();
     		if(Utilities.USER_LOGEDIN){
 	    		mViewPounds = new ViewPounds(MainActivity.this);
@@ -179,6 +216,7 @@ public class MainActivity extends Activity implements OnClickListener {
     		
     		//Utils.CurrentView = mViewHotCoupons.getView();
     	}else if (btnSelectedPosition == 4) {
+    		headertitleTxt.setText("PROFILE");
     		MainActivity.this.viewLayout.removeAllViews();
     		if(Utilities.USER_LOGEDIN){
 	    		mViewAccount = new ViewAccount(MainActivity.this);
@@ -190,6 +228,7 @@ public class MainActivity extends Activity implements OnClickListener {
     		
     		//Utils.CurrentView = mViewExpiringSoonActivity.getView();
     	}else if (btnSelectedPosition == 5) {
+    		headertitleTxt.setText("Tracking");
     		tracking.setVisibility(View.INVISIBLE);
 			MainActivity.this.viewLayout.removeAllViews();
     		mViewTracking = new ViewTracking(MainActivity.this);
@@ -197,12 +236,14 @@ public class MainActivity extends Activity implements OnClickListener {
     		
     		//Utils.CurrentView = mViewExpiringSoonActivity.getView();
     	}else if (btnSelectedPosition == 6) {
+    		headertitleTxt.setText("CHANGE PASSWORD");
     		MainActivity.this.viewLayout.removeAllViews();
 			mViewChangePassword = new ViewChangePassword(MainActivity.this);
 			MainActivity.this.viewLayout.addView(mViewChangePassword.getView());
     		
     		//Utils.CurrentView = mViewExpiringSoonActivity.getView();
     	}else if (btnSelectedPosition == 7) {
+    		headertitleTxt.setText("ABOUT");
     		MainActivity.this.viewLayout.removeAllViews();
     		mViewAbout = new ViewAbout(MainActivity.this);
     		MainActivity.this.viewLayout.addView(mViewAbout.getView());
@@ -382,6 +423,15 @@ public class MainActivity extends Activity implements OnClickListener {
 	        	tv.setTextColor(Color.parseColor("#000000"));
 	        }*/
             
+            if(stringList.get(position).selectedColor){
+            	layout_relative.setBackgroundColor(Color.parseColor("#BFBFBF"));
+            	viewholder.menu_item_name.setBackgroundColor(Color.parseColor("#BFBFBF"));
+            	viewholder.menu_item_name.setTextColor(Color.parseColor("#000000"));
+    		}else{
+    			layout_relative.setBackgroundColor(Color.parseColor("#000000"));
+    			viewholder.menu_item_name.setBackgroundColor(Color.parseColor("#000000"));
+    			viewholder.menu_item_name.setTextColor(Color.parseColor("#F7F7F7"));
+    		}
             
             
             layout_relative.setOnClickListener(new OnClickListener() {
@@ -389,51 +439,66 @@ public class MainActivity extends Activity implements OnClickListener {
 				@Override
 				public void onClick(View v) {
 			            
+					   for(int i=0;i<stringList.size();i++){
+						   stringList.get(i).selectedColor = false;
+					   }
+					   notifyDataSetChanged();
+					
 			            if(!stringList.get(position).isHeader){
 			            
 			            switch (position) {
-						case 0: // account
-							load_selected_view(4); 
-							break;
-						case 1: // header feature
-							load_selected_view(1);
-							break;	
-						case 2: //stream
-							load_selected_view(1);
-							break;	
-						case 3: //adv search
-							load_selected_view(2);
-							break;	
-						case 4: //news feed
+						case 0: //featured
+							stringList.get(position).selectedColor = true;
+							notifyDataSetChanged();
 							load_selected_view(0);
 							break;
-						case 5: //pound received
-							load_selected_view(3);
-							break;	
-						case 6: //pound sent
-							load_selected_view(3);
-							break;	
-						case 7: // tracking
-							load_selected_view(5);
-							break;	
-						case 8: // header account
+						case 1: //stream
+							stringList.get(position).selectedColor = true;
+							notifyDataSetChanged();
 							load_selected_view(1);
 							break;	
-						case 9: // invite friends
-								InviteFriend();
-								//load_selected_view(2);
-								break;	
-						case 10: //change pass
-								load_selected_view(6);
-								break;	
-						case 11: // about shnarped
-							load_selected_view(7);
+						case 2: //advance search
+							stringList.get(position).selectedColor = true;
+							notifyDataSetChanged();
+							load_selected_view(2);
 							break;	
-						case 12: // log out
+						case 3: //pound received
+							stringList.get(position).selectedColor = true;
+							notifyDataSetChanged();
+							load_selected_view(3);
+							break;	
+						case 4: //profile
+							stringList.get(position).selectedColor = true;
+							notifyDataSetChanged();
+							load_selected_view(4);
+							break;
+						/*case 5: //profile
+							load_selected_view(4);
+							break;	*/
+						/*case 6: //pound sent
+							load_selected_view(4);
+							break;	
+						case 7: // header account
+							break;	
+						case 8: // header account
+							InviteFriend();
+							break;	
+						case 9: //change pass
+							load_selected_view(6);
+								break;	
+						case 10: // about shnarped
+							load_selected_view(7);
+								break;	
+						case 11: // log out
 							Utilities.USER_LOGEDIN = false;
 							load_selected_view(4);
 							mAdapter.notifyDataSetChanged();
-								break;	
+							break;	*/
+						/*case 12: // log out
+							Utilities.USER_LOGEDIN = false;
+							load_selected_view(4);
+							mAdapter.notifyDataSetChanged();
+								break;	*/
 						
 						default:
 							break;
@@ -495,21 +560,42 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		/*if (v.getId() == R.id.featuredTab) {
+		
+		if (v.getId() == R.id.ll_featured) {
+			setDefauiltBackgroungToLeftPanel();
 			tracking.setVisibility(View.INVISIBLE);
+			ll_featured.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_featured.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_featured.setTextColor(Color.parseColor("#000000"));
 			load_selected_view(0);
-		}else if (v.getId() == R.id.streamTab) {
+		}else if (v.getId() == R.id.ll_stream) {
+			setDefauiltBackgroungToLeftPanel();
+			ll_stream.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_stream.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_stream.setTextColor(Color.parseColor("#000000"));
 			load_selected_view(1);
-		}else if (v.getId() == R.id.searchTab) {
+		}else if (v.getId() == R.id.ll_search) {
+			setDefauiltBackgroungToLeftPanel();
 			tracking.setVisibility(View.INVISIBLE);
+			ll_search.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_search.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_search.setTextColor(Color.parseColor("#000000"));
 			load_selected_view(2);
-		}else if (v.getId() == R.id.poundTab) {
+		}else if (v.getId() == R.id.ll_pound) {
+			setDefauiltBackgroungToLeftPanel();
 			tracking.setVisibility(View.INVISIBLE);
+			ll_pound.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_pound.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_pound.setTextColor(Color.parseColor("#000000"));
 			load_selected_view(3);
-		}else if (v.getId() == R.id.accountTab) {
+		}else if (v.getId() == R.id.ll_profile) {
+			setDefauiltBackgroungToLeftPanel();
 			tracking.setVisibility(View.INVISIBLE);
+			ll_profile.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_profile.setBackgroundColor(Color.parseColor("#BFBFBF"));
+			menu_item_profile.setTextColor(Color.parseColor("#000000"));
 			load_selected_view(4);
-		}else */if (v.getId() == R.id.tracking) {
+		}else if (v.getId() == R.id.tracking) {
 			tracking.setVisibility(View.INVISIBLE);
 			MainActivity.this.viewLayout.removeAllViews();
     		mViewTracking = new ViewTracking(MainActivity.this);
@@ -517,8 +603,32 @@ public class MainActivity extends Activity implements OnClickListener {
 		}else if(v.getId()==R.id.openlist){
 			mMenuDrawer.openMenu();
 		}
+		
+		mMenuDrawer.closeMenu();
 	}
 
 	
+	 private void setDefauiltBackgroungToLeftPanel(){
+		 ll_featured.setBackgroundColor(Color.parseColor("#000000"));
+		 ll_stream.setBackgroundColor(Color.parseColor("#000000"));
+		 ll_search.setBackgroundColor(Color.parseColor("#000000"));
+		 ll_pound.setBackgroundColor(Color.parseColor("#000000"));
+		 ll_profile.setBackgroundColor(Color.parseColor("#000000"));
+		 
+		 menu_item_featured.setBackgroundColor(Color.parseColor("#000000"));
+		 menu_item_featured.setTextColor(Color.parseColor("#F7F7F7"));
+		 
+		 menu_item_stream.setBackgroundColor(Color.parseColor("#000000"));
+		 menu_item_stream.setTextColor(Color.parseColor("#F7F7F7"));
+		 
+		 menu_item_search.setBackgroundColor(Color.parseColor("#000000"));
+		 menu_item_search.setTextColor(Color.parseColor("#F7F7F7"));
+		 
+		 menu_item_pound.setBackgroundColor(Color.parseColor("#000000"));
+		 menu_item_pound.setTextColor(Color.parseColor("#F7F7F7"));
+		 
+		 menu_item_profile.setBackgroundColor(Color.parseColor("#000000"));
+		 menu_item_profile.setTextColor(Color.parseColor("#F7F7F7"));
+	 }
 
 }

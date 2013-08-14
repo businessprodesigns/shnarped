@@ -29,7 +29,6 @@
                 android:id="@+id/tv_playername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="win wiiiiii"
                 android:textColor="#730000"
                 android:textSize="15sp" />
 
@@ -38,14 +37,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
-                android:text="test test"
                 android:textColor="#595959" />
 
             <TextView
                 android:id="@+id/tv_playeradddate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="test test"
                 android:textColor="#595959"
                 android:textSize="10sp" />
 
@@ -59,7 +56,6 @@
         android:layout_below="@id/ll_playerlayout"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="test name"
         android:textColor="#000"
         android:textSize="15sp"
         android:textStyle="bold" />

@@ -5,7 +5,7 @@
     android:orientation="vertical" >
     
 
-    <ListView 
+    <com.shnarped.pulltorefreshview.PullToRefreshListView 
         android:id="@+id/trackingList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,6 +16,6 @@
         android:divider="@android:color/transparent"
         >
         
-    </ListView>
+    </com.shnarped.pulltorefreshview.PullToRefreshListView>
     
 </LinearLayout>

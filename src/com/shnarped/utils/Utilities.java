@@ -36,8 +36,8 @@ public class Utilities {
 	public static String ACCESS_CODE = "1234";
 	public static boolean USER_LOGEDIN = false;
 	
-	public static String [] LoggedInList = new String [] {"User Name\nFavourite Team","Featured","Stream","Advanced Search","News Feed","Pound Received","Pound Sent","Tracking List","Account","Invite Friends","Change Password","About Shnarped","Log Out"};
-	public static Integer [] LoggedInImgs = new Integer[] {R.drawable.profile,-1,R.drawable.stream,R.drawable.search,R.drawable.featured,R.drawable.pound_fist,R.drawable.pound_fist,R.drawable.plus_icon,-1,R.drawable.profile,R.drawable.profile,R.drawable.ic_dialog_info,R.drawable.profile};
+	public static String [] LoggedInList = new String [] {"Featured","Stream","Search","Pounds","Profile"};
+	public static Integer [] LoggedInImgs = new Integer[] {R.drawable.featured,R.drawable.stream,R.drawable.search,R.drawable.pound_fist,R.drawable.profile};
 	
 	public static String [] LoggedOutList = new String [] {"Me","Featured","Stream","Advanced Search","News Feed","Pounds"};
 	public static Integer [] LoggedOutImgs = new Integer[] {R.drawable.stream,-1,R.drawable.stream,R.drawable.search,R.drawable.search,R.drawable.search};
@@ -64,7 +64,7 @@ public class Utilities {
 	public static String BASE_URL 			= "http://staging.shnarped.com/";
 	public static String MOBILEVERSION_URL 	= "mobile/v1/";
 	public static String EVENTLISTURL_URL 	= "events.json";
-	public static String STREAMLISTURL_URL 	= "stream.json";
+	public static String STREAMLISTURL_URL 	= "streams.json";
 	
 	
 	
@@ -234,16 +234,16 @@ public class Utilities {
 					connected = true;
 				} else {
 					connected = false;
-					alertMessage(context, "Network not available.");
+					//alertMessage(context, "Network not available.");
 				}
 			} else {
 				connected = false;
-				alertMessage(context, "Network not available.");
+				//alertMessage(context, "Network not available.");
 			}
 		} catch (Exception ex) {
 			System.out.print(ex);
 			 Log.e("Exception",""+ex);
-			alertMessage(context, "Network not available");
+			//alertMessage(context, "Network not available");
 		}
 		// Log.e("connected-is",""+connected);
 		return connected;
@@ -392,6 +392,16 @@ public class Utilities {
 	    int diffInDays = (int) ((d.getTime() - d1.getTime())/ (1000 * 60 * 60 * 24));
 	    
 	    return diffInDays;
+	}
+	public static String nullCheck(String value){
+		
+		try{
+			return value;
+		}catch(Exception e){
+			return "";
+		}
+		
+		 
 	}
 	
 }

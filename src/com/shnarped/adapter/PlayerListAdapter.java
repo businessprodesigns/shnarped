@@ -38,8 +38,9 @@ public class PlayerListAdapter extends BaseAdapter {
 			imageLoader = new ImageLoader(_context.getApplicationContext());
 		}
 	
+		
         public int getCount() {
-	    	return eventresponselist.size();
+        	return eventresponselist.size();
         }
         
         public Object getItem(int arg0) {
@@ -77,9 +78,13 @@ public class PlayerListAdapter extends BaseAdapter {
 	        	viewholder 		= (ViewHolder) layout_relative.getTag();
 	        }
 			
-			imageLoader.DisplayImage(eventresponselist.get(position).recipients[0].avatar, viewholder.iv_playerimg);
+			try{
+				imageLoader.DisplayImage(eventresponselist.get(position).recipients[0].avatar, viewholder.iv_playerimg);
+				viewholder.tv_playername.setText(Html.fromHtml("<U>"+eventresponselist.get(position).recipients[0].first_name+" "+eventresponselist.get(position).recipients[0].last_name+"</u>"));
+			}catch(Exception e){
+				
+			}
 			
-			viewholder.tv_playername.setText(Html.fromHtml("<U>"+eventresponselist.get(position).recipients[0].first_name+" "+eventresponselist.get(position).recipients[0].last_name+"</u>"));
 			try{
 				viewholder.tv_playerhmtwn.setText(eventresponselist.get(position).recipients[0].player.hometown);
 			}catch(Exception e){
@@ -109,9 +114,34 @@ public class PlayerListAdapter extends BaseAdapter {
 				
 			}
 			
-			viewholder.tv_title.setText(eventresponselist.get(position).title);
-			viewholder.tv_body.setText(eventresponselist.get(position).body);
-			viewholder.tv_punds.setText(eventresponselist.get(position).recipients[0].pound_count.total+" pounds");
+			try{
+				if(!eventresponselist.get(position).title.contentEquals("null")){
+					viewholder.tv_title.setText(eventresponselist.get(position).title);
+				}else{
+					viewholder.tv_title.setVisibility(View.GONE);
+				}
+			}catch(Exception e){
+				viewholder.tv_title.setVisibility(View.GONE);
+			}
+			
+			
+			try{
+				if(!eventresponselist.get(position).body.contentEquals("null")){
+					viewholder.tv_body.setText(eventresponselist.get(position).body);
+				}else{
+					viewholder.tv_body.setVisibility(View.GONE);
+				}
+			}catch(Exception e){
+				viewholder.tv_body.setVisibility(View.GONE);
+			}
+			
+			
+			try{
+				viewholder.tv_punds.setText(eventresponselist.get(position).recipients[0].pound_count.total+" pounds");
+			}catch(Exception e){
+				
+			}
+			
 			
 			viewholder.ll_playerimglinks.removeAllViews();
 			
@@ -178,6 +208,7 @@ public class PlayerListAdapter extends BaseAdapter {
 		    }
 			}catch(Exception e){
 				//e.printStackTrace();
+				viewholder.ll_playerimglinks.setVisibility(View.GONE);
 			}
 			
             return layout_relative;

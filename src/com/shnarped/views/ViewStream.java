@@ -9,15 +9,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.shnarped.activites.R;
 import com.shnarped.activity.MainActivity;
 import com.shnarped.adapter.PlayerListAdapter;
+import com.shnarped.database.DatabaseOperation;
+import com.shnarped.pulltorefreshview.PullToRefreshListView;
+import com.shnarped.pulltorefreshview.PullToRefreshListView.OnRefreshListener;
 import com.shnarped.responses.EventResponse;
 import com.shnarped.utils.Utilities;
-import com.shnarped.views.ViewFeatured.FeaturedTask;
 import com.shnarped.web.WebTask;
 
 public class ViewStream implements OnClickListener {
@@ -25,8 +26,10 @@ public class ViewStream implements OnClickListener {
 	private LayoutInflater inflater = null;
 	View _view;
 	Context _context;
-	ListView streamList;
+	PullToRefreshListView streamList;
 	ArrayList<EventResponse> eventresponselist;
+	DatabaseOperation _databaseoperation;
+	PlayerListAdapter playlistdadpter;
 	public ViewStream(MainActivity a,Context context) {
 		this.mActivity = a;
 		_context = context;
@@ -36,18 +39,19 @@ public class ViewStream implements OnClickListener {
 	}
 	private void init(View _view2) {
 		mActivity.headertitleTxt.setText("STREAM");
-		streamList = (ListView)_view.findViewById(R.id.trackingList);
+		streamList = (PullToRefreshListView)_view.findViewById(R.id.trackingList);
 		eventresponselist = new ArrayList<EventResponse>();
-		if(Utilities.isInternetOnline(_context)){ 
-			 
-			 ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
-			 /*try {
-				 postParameters.add(new BasicNameValuePair("version","1.1"));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}*/
-			 new StreamTask(_context, Utilities.BASE_URL + Utilities.MOBILEVERSION_URL + Utilities.EVENTLISTURL_URL+"?version=1.1&type=news&showcase=false").execute(postParameters);
-		 }
+		_databaseoperation = new DatabaseOperation(_context);
+		
+		streamTaskCall();
+		streamList.setOnRefreshListener(new OnRefreshListener() {
+		    @Override
+		    public void onRefresh() {
+		    	streamTaskCall();
+		    	
+		    }
+		});
+		
 	}
 	public View getView() {
 		return _view;
@@ -63,26 +67,52 @@ public class ViewStream implements OnClickListener {
 		public StreamTask(Context context, String activityURL) {
 			super(context, activityURL);
 		}
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			//super.onPreExecute();
+		}
 
 		@Override
 		protected void onPostExecute(String result) {
-			super.onPostExecute(result);
+			//super.onPostExecute(result);
 			Log.i("Stream result: - ",""+result);
 				
 				try{
 					EventResponse[] _eventresponse = new Gson().fromJson(result, EventResponse[].class);
-					
+					_databaseoperation.openDB();
 					for (EventResponse evntrsponse : _eventresponse) {
 						eventresponselist.add(evntrsponse);
+						if(_databaseoperation.getToatlEventData(Integer.parseInt(evntrsponse.id))<=0){
+							_databaseoperation.insertEventsData(evntrsponse);
+						}
 				    }
-					
-					PlayerListAdapter playlistdadpter = new PlayerListAdapter(_context,eventresponselist);
-					streamList.setAdapter(playlistdadpter);
+					_databaseoperation.closeDB();
 					
 				}catch(Exception e1){
 					e1.printStackTrace();
 				}
+				playlistdadpter = new PlayerListAdapter(_context,eventresponselist);
+				streamList.setAdapter(playlistdadpter);
+				streamList.onRefreshComplete();
 		}
 		
 	} 
+	
+	public void streamTaskCall(){
+		if(Utilities.isInternetOnline(_context)){ 
+			 
+			 ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+			 new StreamTask(_context, Utilities.BASE_URL + Utilities.MOBILEVERSION_URL + Utilities.STREAMLISTURL_URL+"?version=1.1").execute(postParameters);
+		 }else{
+			 // if internate is not available then get value from database;
+			 _databaseoperation.openDB();
+			 eventresponselist = _databaseoperation.setOfflineDataToList(eventresponselist,1);
+			 _databaseoperation.closeDB();
+			 playlistdadpter = new PlayerListAdapter(_context,eventresponselist);
+			 streamList.setAdapter(playlistdadpter);
+		 }
+	}		
+			 
+		
 }

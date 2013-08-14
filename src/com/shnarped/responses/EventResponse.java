@@ -117,7 +117,7 @@ public class EventResponse {
 	public String twitter_message = "";
 	public String facebook_message = "";
 
-	public class PublisherClass{
+	public static class PublisherClass{
 		
 		public String id = "";
 		public String first_name = "";
@@ -141,7 +141,7 @@ public class EventResponse {
 		
 	}
 	
-	public class RecipientsClass{
+	public static class RecipientsClass{
 		
 		public String id = "";
 		public String first_name = "";
@@ -155,17 +155,17 @@ public class EventResponse {
 		public String favourite_team = "";
 		public String verified = "";
 		public PoundCountClass pound_count;
-		public class PoundCountClass{
-			public String total = "";
-		}
+		
 		public String following = "";
 		public String push = "";
 		public String player_id = "";
 		public PlayerClass player;
 		
 	}
-    
-	public class PlayerClass{
+	public static class PoundCountClass{
+		public String total = "";
+	}
+	public static class PlayerClass{
 		public String id="";
 		public String first_name="";
 		public String last_name="";
@@ -186,7 +186,7 @@ public class EventResponse {
 		public String questions="";
 		public String questions_answered="";
 	}
-	public class LinksClass{
+	public static class LinksClass{
 		
 		public String image_url = "";
 		public String image_thumb_url = "";
